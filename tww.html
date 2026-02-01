@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terror Tawfiq | Gothic Persona</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=MedievalSharp&family=Cinzel:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blood-red: #8B0000;
+            --dark-red: #4A0404;
+            --gothic-purple: #2A0A2A;
+            --dark-purple: #1A051A;
+            --gothic-gray: #333333;
+            --light-gray: #AAAAAA;
+            --parchment: #F5E9D2;
+            --rust: #B7410E;
+            --shadow-color: rgba(0, 0, 0, 0.7);
+        }
+
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: #0a0a0a;
+            color: var(--light-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(42, 10, 42, 0.07) 0%, transparent 20%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234a0404' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--dark-red);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.5rem;
+            color: var(--blood-red);
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.8rem;
+            color: var(--parchment);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        nav a:hover {
+            color: var(--blood-red);
+            background-color: rgba(139, 0, 0, 0.1);
+            text-shadow: 0 0 8px rgba(139, 0, 0, 0.7);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--blood-red);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(26, 5, 26, 0.9)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 4.5rem;
+            color: var(--blood-red);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(139, 0, 0, 0.8);
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--parchment);
+            font-family: 'MedievalSharp', cursive;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--blood-red);
+            border: 2px solid var(--blood-red);
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Cinzel Decorative', cursive;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            background-color: var(--blood-red);
+            color: #000;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        /* Main Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--blood-red);
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 3px;
+            background-color: var(--blood-red);
+            margin: 0.5rem auto;
+            box-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+            filter: grayscale(30%) contrast(1.1) brightness(0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--dark-red);
+        }
+
+        .about-text {
+            flex: 1;
+            background-color: rgba(26, 5, 26, 0.7);
+            padding: 2.5rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--blood-red);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-text h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--parchment);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: rgba(10, 10, 10, 0.9);
+            border-top: 1px solid var(--dark-red);
+            border-bottom: 1px solid var(--dark-red);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--dark-red);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(40%) brightness(0.7);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%) brightness(0.9);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(139, 0, 0, 0.8));
+            color: var(--parchment);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Manifesto Section */
+        .manifesto-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(26, 5, 26, 0.7);
+            padding: 3rem;
+            border-radius: 5px;
+            border: 1px solid var(--dark-red);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .manifesto-content:before {
+            content: "❧";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            color: var(--blood-red);
+            opacity: 0.5;
+        }
+
+        .manifesto-content:after {
+            content: "☠";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: var(--blood-red);
+            opacity: 0.5;
+        }
+
+        .manifesto-text {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--parchment);
+            text-align: justify;
+        }
+
+        .manifesto-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 3px solid var(--blood-red);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--light-gray);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            background-color: rgba(26, 5, 26, 0.7);
+            padding: 2rem;
+            border-radius: 5px;
+            border-right: 3px solid var(--blood-red);
+        }
+
+        .contact-info h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--parchment);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-detail i {
+            color: var(--blood-red);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(139, 0, 0, 0.2);
+            color: var(--blood-red);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--dark-red);
+        }
+
+        .social-link:hover {
+            background-color: var(--blood-red);
+            color: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(10, 10, 10, 0.98);
+            border-top: 1px solid var(--dark-red);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.5rem;
+            color: var(--blood-red);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
+        }
+
+        .copyright {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--gothic-gray);
+            padding-top: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .flicker {
+            animation: flicker 3s infinite;
+        }
+
+        .float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid var(--dark-red);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .manifesto-content {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Terror <span>Tawfiq</span></div>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">The Persona</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#manifesto">Manifesto</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="flicker">TERROR TAWFIQ</h1>
+            <p class="float">A Gothic Persona of Dark Elegance and Mystique</p>
+            <p>Where shadows whisper and darkness dances, there you will find the essence of Terror Tawfiq.</p>
+            <a href="#manifesto" class="cta-button">Enter the Darkness</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">The Persona</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80" alt="Terror Tawfiq Persona">
+                </div>
+                <div class="about-text">
+                    <h3>Embrace the Shadows</h3>
+                    <p>Terror Tawfiq is not merely a name—it is an embodiment of the gothic aesthetic, a convergence of dark elegance and profound mystery. Born from the twilight realms where beauty and melancholy intertwine, this persona represents the allure of the night and the poetry of shadows.</p>
+                    <p>With roots in Victorian mourning traditions and romanticized darkness, Terror Tawfiq explores the beauty found in decay, the elegance in darkness, and the profound mysteries that dwell just beyond the edge of perception.</p>
+                    <p>This is not about fear, but about embracing the darker aspects of existence as a source of power, creativity, and transcendent beauty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery of Shadows</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80" alt="Gothic Atmosphere">
+                    <div class="gallery-overlay">
+                        <h3>Nocturnal Elegance</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Dark Aesthetic">
+                    <div class="gallery-overlay">
+                        <h3>Shadow Realms</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Gothic Architecture">
+                    <div class="gallery-overlay">
+                        <h3>Architectural Darkness</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto">
+        <div class="container">
+            <h2 class="section-title">The Gothic Manifesto</h2>
+            <div class="manifesto-content">
+                <div class="manifesto-text">
+                    <p>In a world obsessed with light, we find solace in shadows. In an age of constant exposure, we cherish the mystery of the veiled and the hidden. Terror Tawfiq stands as a testament to the beauty that flourishes in darkness, the elegance that thrives in twilight.</p>
+                    
+                    <div class="quote">
+                        "We do not fear the darkness; we become one with it. We do not mourn the past; we wear its elegance as our armor."
+                    </div>
+                    
+                    <p>Our philosophy embraces the melancholic beauty of decay, the romanticism of the nocturnal, and the profound wisdom found in embracing the entirety of human experience—light and shadow alike.</p>
+                    
+                    <p>Through art, fashion, literature, and lifestyle, we cultivate an aesthetic that transcends mere appearance, becoming instead a way of perceiving and interacting with the world—a lens that reveals the sublime in the somber, the exquisite in the eerie.</p>
+                    
+                    <p>Terror Tawfiq is not a destination but a journey—a continuous exploration of the darkly beautiful, the elegantly mysterious, and the profoundly poetic aspects of existence that conventional perspectives often overlook or dismiss.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect with the Darkness</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Reach into the Shadows</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@terrortawfiq.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>The Nocturnal Chapel, Gothic Quarter</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Available from dusk till dawn</span>
+                        </div>
+                    </div>
+                    <p>For inquiries about collaborations, artistic projects, or simply to share in the appreciation of gothic aesthetics, do not hesitate to reach out through the shadows.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Terror Tawfiq</div>
+                <p>Embracing the dark elegance of existence since the first shadow fell across the world.</p>
+                <div class="copyright">
+                    &copy; 2023 Terror Tawfiq. All rights reserved. | Designed with dark elegance
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+                header.style.backdropFilter = 'blur(5px)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+        
+        // Add random flicker effect to elements with the 'flicker' class
+        const flickerElements = document.querySelectorAll('.flicker');
+        flickerElements.forEach(element => {
+            setInterval(() => {
+                const randomOpacity = 0.7 + Math.random() * 0.3;
+                element.style.opacity = randomOpacity;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
